@@ -1,17 +1,21 @@
 import React from "react";
 import './Square.css'
 
-export default class Square extends React.Component {
+const Square = ({onClick, value}) => {
     
-    render(){
-        return(
-            <div>
-                <button className='square' onClick={()=>{{this.setState({value:'X'})}}}>
-                    {this.props.value}
-                </button>
-               
-            </div>
+
+    return(
+        <div> 
+            <button 
+                className='square' 
+                onClick={()=>{onClick()}}
+            >
+                {value}
+            </button>
             
-        )
-    }
+        </div>
+        
+    )
+
 }
+export default Square
